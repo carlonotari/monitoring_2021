@@ -34,3 +34,8 @@ bubble(meuse, "zinc")
 #do the same for lead
 bubble(meuse, "lead")
 bubble(meuse, "lead", col="red")
+       
+###install install.packages("ggplot2")
+install.packages("ggplot2")
+       
+       
