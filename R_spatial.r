@@ -37,5 +37,26 @@ bubble(meuse, "lead", col="red")
        
 ###install install.packages("ggplot2")
 install.packages("ggplot2")
-       
-       
+library(ggplot2) bioefuels
+
+#ecological dataframe#	
+#biofuels#
+biofuels <- c(120, 200, 350, 570, 750) #array of various c
+#oxydatavie enzymes#
+oxydative <-c(1200, 1300, 21000, 34000, 50000)
+	#dataframe
+
+d <- data.frame(biofuels, oxydative)
+
+#ggplot data aes (x=biofuels, y=oxydative)
+ggplot(d, aes(x=biofuels, y=oxydative))
+	
+#funzione: geom_point()  --> geometry to built point inside the graph
+	
+ggplot(d, aes(x=biofuels, y=oxydative)) + geom_point()
+ggplot(d, aes(x=biofuels, y=oxydative)) + geom_point(col ="red", size =5) + geom_line(col="green")
+ggplot(d, aes(x=biofuels, y=oxydative)) + geom_polygon()      
+
+## setwd("path/lab")
+setwd("C:/Users/User/Desktop/lab/") #setwd("C:/Users/User/Desktop/lab/")
+covid <- read.table( "covid_agg.csv", header=TRUE)
