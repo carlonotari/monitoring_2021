@@ -146,4 +146,25 @@ cl <- colorRampPalette(c('lightpink2','lightsalmon','tomato1','red3','maroon'))(
 plot(cases_map, col = cl)
 plot(Spoints, cex=Spoints$cases/10000, col = 'purple3', lwd = 3, add=T)
 
- 
+ ####30/11 °leggiamo i dti di leonardo sulla laguna di venezia
+
+library(spatstat)
+setwd("C:/lab/")
+leo <- read.table("dati_zabotti.csv", header=T, sep=",")
+attach(leo)
+
+summary(leo)
+leo_ppp <- ppp(x, y, c(2300000,2325000), c(5005000,5045000))
+
+plot(leo_ppp)
+
+
+
+
+
+
+
+
+
+
+
