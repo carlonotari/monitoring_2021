@@ -157,12 +157,19 @@ summary(leo)
 leo_ppp <- ppp(x, y, c(2300000,2325000), c(5005000,5045000))
 
 plot(leo_ppp)
+density_map <- density(leo_ppp)
 
+plot(density_map)
+points(leo_ppp)
 
+###SFASO MIO###
 
+###marks(leo_ppp) <- t
+####leo_map<-Smooth(leo_ppp)
 
+#####cl <- colorRampPalette(c('black','darkblue','black','red3','maroon'))(100000)
 
-
+#####
 
 
 
