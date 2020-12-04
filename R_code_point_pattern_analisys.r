@@ -169,9 +169,63 @@ points(leo_ppp)
 
 #####cl <- colorRampPalette(c('black','darkblue','black','red3','maroon'))(100000)
 
-#####
+##### interpolation of student's data
 
+setwd("C:/lab/")
+load("point_pattern_analysis.RData")
+ls() #vengono fuori un sacco di risultati ma non è un problema se si usa il $. tipo che R salva tutti i nomi usati con la funzione ls
+#list of the file i had create
+head(leo)
 
+library(spatstat)
+attach(leo)
+marks(leo_ppp) <- chlh
+chlh_map <- Smooth(leo_ppp)
+plot(chlh_map, col=cl)
+cl <- colorRampPalette(c('yellow','orange','red','green'))(100) # 
+points(leo_ppp)
 
+# exercise: do the same with chlorophil in the sediment 
 
+library(spatstat)
+attach(leo)
+marks(leo_ppp) <- chls
+chls_map <- Smooth(leo_ppp)
+plot(chls_map, col=cl)
+cl <- colorRampPalette(c('yellow','orange','red','green'))(100)  
+points(leo_ppp)
 
+###put all graph in one row using multipanel function 
+par(mfrow=c(1,3))
+#first graph is density map
+plot(density_map, col = cl) 
+points(leo_ppp)
+
+#second graph 
+plot(chlh_map, col=cl)
+points(leo_ppp)
+plot(chls_map, col=cl)
+points(leo_ppp)
+
+#####questo sotto funziona 
+par(mfrow=c(1,3))
+ #first graph is density map
+plot(density_map, col = cl) 
+points(leo_ppp)
+ 
+#second graph 
+plot(chlh_map, col=cl)
+points(leo_ppp)
+plot(chls_map, col=cl)
+points(leo_ppp)
+##### cambiare l'ordine e invece che in riga in colonna 
+par(mfrow=c(3,1))
+ #first graph is density map
+plot(density_map, col = cl) 
+points(leo_ppp)
+ 
+#second graph 
+plot(chlh_map, col=cl)
+points(leo_ppp)
+plot(chls_map, col=cl)
+points(leo_ppp)
