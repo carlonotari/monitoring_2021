@@ -1,4 +1,7 @@
 # exam code 
+# https://land.copernicus.vgt.vito.be/PDF/portal/Application.html
+# https://cran.r-project.org/web/packages/ncdf4/index.html
+
 
 library(ncdf4)
 library(raster)
@@ -8,42 +11,57 @@ setwd("C:/exam_m/")
 al99<- raster("1999.nc")
 al20<- raster("2020.nc")
 plot(al99)
-plot(al20)
+#plot(al20)
 
+
+# tabella a quattro siberia prima e dopo e 
+# groellandia 99 vs 20
+
+#zoom siberia  (40,80)
+#zoom groellandia (-150,-50)
+ext <- c(-150,-50,40,60)
+zoom(al99, ext=ext)
+
+
+#tabella a 6: i 4 valori di prima e la loro differenza
+
+difal <- al99-al20  #differenza 99 meno 20
+
+cldif <- colorRampPalette(c('blue','white','red'))(100) # 
+plot(difal, col=cldif)
+
+
+#zoom siberia  (40-80)
+
+ext <- c(-150,150,40,150)
+zoom(al99, ext=ext)
+#zoom(al20, ext=ext)
+
+#al99 <- crop(al99, ext)## boh
+
+plot(al99)
+#plot(al20)
+#change the color
+
+clal99 <- colorRampPalette(c('blue','yellow','red'))(100)  #CAMBIA STI COLORI BASTA!!
+#sal99<- crop(al, ext)
+plot(al99, col=clal99, main="value of albedo during 1999")
+
+
+difal <- al99-al20  #differenza 99 meno 20
+
+cldif <- colorRampPalette(c('blue','white','red'))(100) # 
+plot(difal, col=cldif)
+
+#zoom groellandia 
+
+ext <- c(-150,-50,40,60)
+zoom(al99, ext=ext)
 
 
 #zoom siberia 
 
-ext <- c(-150,150,40,150)
-zoom(al99, ext=ext)
-zoom(al20, ext=ext)
-
-ext <- c(-150,150,40,150)
-zoom(al20, ext=ext)
-
-
-clal99 <- colorRampPalette(c('blue','white','red'))(100)  #CAMBIA STI COLORI BASTA!!
-jan20 <- crop(jan20, ext)
-plot(jan20, col=cljan20, main="titolo")
-
-
-
-
-dift <- tjan - toct #differenza jennaio meno ottobre 
-cldif <- colorRampPalette(c('blue','white','red'))(100) # 
-plot(dift, col=cldif)
-
-
-
-
-
-
-
-
-
-
-
-
+#tabella a 4
 
 
 
