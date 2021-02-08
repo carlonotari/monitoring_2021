@@ -14,7 +14,7 @@ setwd("C:/exam_m/")
 al99 <- raster("j1999.nc")        # https://land.copernicus.vgt.vito.be/PDF/free?productID=30608047&collectionID=1000174&fileIndex=0
 al20 <- raster("j2020.nc")        # https://land.copernicus.vgt.vito.be/PDF/free?productID=56032676&collectionID=1000174&fileIndex=0
 
-clal <- colorRampPalette(c('blue','yellow','red'))(100)
+clal <- colorRampPalette(c('darkslateblue','firebrick1','gold1'))(100)
 
 par(mfrow=c(1,2))
 
@@ -68,7 +68,7 @@ plot(gro_al20, col=clal, main="Greenland 2020")
 difs <- sib_al99 - sib_al20
 difg <- gro_al99 - gro_al20 
 
-cldif <-colorRampPalette(c('white','blue','red'))(100)
+cldif <-colorRampPalette(c('white','firebrick2','gold1'))(100)
 
 
 par(mfrow=c(2,1))
