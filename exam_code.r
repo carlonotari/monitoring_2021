@@ -78,6 +78,7 @@ plot(difg, col=cldif, main="variation Greenland")
  
 
 ## non ci credo: si può fareeeeee
+#it could work
 #img:frankestain junior  
 ############
 
