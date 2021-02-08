@@ -29,26 +29,26 @@ plot(al20, col=clal, main="albedo in january 2020")
 sib_al99 <- raster("j1999.nc")
 ext <- c(0,150,40,60)
 zoom(sib_al99, ext=ext)
-clal <- colorRampPalette(c('blue','yellow','red'))(100)
+clal <- colorRampPalette(c('darkslateblue','firebrick1','gold1'))(100)
 sib_al99 <- crop(sib_al99, ext)
 
 sib_al20 <- raster("j2020.nc")
 ext <- c(0,150,40,60)
 zoom(sib_al20, ext=ext)
-clal <- colorRampPalette(c('blue','yellow','red'))(100)
+clal <- colorRampPalette(c('darkslateblue','firebrick1','gold1'))(100)
 sib_al20 <- crop(sib_al20, ext)
 
 
 gro_al99 <- raster("j1999.nc")
 ext <- c(-130,-50,40,60)
 zoom(gro_al99, ext=ext)
-clal <- colorRampPalette(c('blue','yellow','red'))(100)
+clal <- colorRampPalette(c('darkslateblue','firebrick1','gold1'))(100)
 gro_al99 <- crop(gro_al99, ext)
 
 gro_al20 <- raster("j2020.nc")
 ext <- c(-130,-50,40,60)
 zoom(gro_al20, ext=ext)
-clal <- colorRampPalette(c('blue','yellow','red'))(100)
+clal <- colorRampPalette(c('darkslateblue','firebrick1','gold1'))(100)
 gro_al20 <- crop(gro_al20, ext)
 
 
