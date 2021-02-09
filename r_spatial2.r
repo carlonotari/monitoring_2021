@@ -42,7 +42,7 @@ library(ggplot2) bioefuels
 #ecological dataframe#	
 #biofuels#
 biofuels <- c(120, 200, 350, 570, 750) #array of various c
-#oxydatavie enzymes#
+#oxydatavie enzymes
 oxydative <-c(1200, 1300, 21000, 34000, 50000)
 	#dataframe
 
@@ -65,11 +65,11 @@ covid <- read.table( "covid_agg.csv", header=TRUE)
 ## setwd("path/lab")
 setwd("C:/Users/User/Desktop/lab/") #setwd("C:/Users/User/Desktop/lab/")
 covid <- read.table( "covid_agg.csv", header=TRUE) #true permette di vedere la prima riga, false no, così da vedere solo i dati e non la categoria
-head(covid) #per vedere l'inizio del file
+head(covid) #per vedere l'inizio del file # is used to show the first part of the file 
 summary(covid   #breve analisi di dati--> media max min etc
-name(covid) #ti dice il nome delle variabili
+name(covid) #ti dice il nome delle variabili #name of variables 
 # ggplot2
 library(ggplot2)
-ggplot(covid, aes(x=lon, y=lat)) + geom_point()   #x=longitudine(lon) y=latitudine(lat) --> questo lo vedi dall summary
+ggplot(covid, aes(x=lon, y=lat)) + geom_point()   #x=longitudine(lon) y=latitudine(lat) --> questo lo vedi dal summary #see it on summary 
 #change the size of our data according the number of cases
-ggplot(covid, aes(x=lon, y=lat, size = cases)) + geom_point() #cambia la dimensione del puntino in vase ai casi 
+ggplot(covid, aes(x=lon, y=lat, size = cases)) + geom_point() #cambia la dimensione del puntino in base ai casi #it changes the dimension of the dots. 
