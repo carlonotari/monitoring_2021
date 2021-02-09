@@ -26,11 +26,11 @@ primates <- c(3, 5, 9, 15, 40)
 [1] 100  70  30  10   5
 > 
 > plot(primates, crabs)
-> plot(primates, crabs, col= "red")    #cambia colore pallino
-> plot(primates, crabs, col= "red", pch=19, cex=6) #cambia la tipologia del pallino e le dimensioni del pallimo
+> plot(primates, crabs, col= "red")    # it changes the colour of "pallinno"
+> plot(primates, crabs, col= "red", pch=19, cex=6) # it changes the dimensions and the type of "pallinno"
 > plot(primates, crabs, col= "red", pch=19, cex=6, main=" My first ecologycal graph in R")  #main "titolo"
 > 
-# create a dataframe che è la tabella  
+# create a dataframe che è la tabella   
 ecoset <- data.frame(primates, crabs)
 # ecological numbers 
 # mean number of individuals per site
