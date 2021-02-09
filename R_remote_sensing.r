@@ -49,7 +49,7 @@ plot(p224r63_2011$B4_sre, col=cln)
 
 dev.off()
 plotRGB(p224r63_2011, r=3, g=2, b=1, stretch="Lin")
-plotRGB(p224r63_2011, r=4, g=3, b=2, stretch="Lin") ###cambia l'immagine in infrarossi 
+plotRGB(p224r63_2011, r=4, g=3, b=2, stretch="Lin") ###cambia l'immagine in infrarossi #show infrared
 plotRGB(p224r63_2011, r=3, g=4, b=2, stretch="Lin") ##green component
 plotRGB(p224r63_2011, r=3, g=2, b=4, stretch="Lin") ## blue component
 
