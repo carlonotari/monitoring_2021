@@ -5,7 +5,7 @@ install.packages("rasterVis")
 
 library(rasterVis)
 library(rasterdiv)
-library(raster)
+library(raster)     #reading, writing, manipulating, analyzing and modeling of spatial data
 
 data(copNDVI)  # means copernicus and NDVI realized image # we should remove the blue and brown part 
 plot(copNDVI)  # the map: longterm NDVI= average value for each pixel 1999-2017 
@@ -44,14 +44,14 @@ plot(copNDVI_italy, col=clymax)
 
 
 #deforastation example 
-library(raster)
-library(RStoolbox)
+library(raster)   #Reading, writing, manipulating, analyzing and modeling of spatial data
+library(RStoolbox) #two libraries that we need
 
-setwd("C:/lab/")
-defor1 <- brick("defor1_.jpg")
-
-plotRGB(defor1, 1, 2, 3, stretch="Lin")
-
+setwd("C:/lab/")   #set the working directory --> lab folder 
+defor1 <- brick("defor1_.jpg")   #import several layers image  #Create A RasterBrick Object--> is a multi-layer raster objec
+                                   #8 bit means= 256 colors for each bands
+       
+plotRGB(defor1, 1, 2, 3, stretch="Lin")            #strech--> enanche the colors
 plotRGB(defor1, r=1, g=2, b=3, stretch="Lin")
 
 defor2 <- brick("defor2_.jpg")
