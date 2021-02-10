@@ -1,4 +1,4 @@
-R code to view biomass 
+#R code to view biomass 
 
 install.packages("rasterdiv")
 install.packages("rasterVis")
@@ -7,40 +7,40 @@ library(rasterVis)
 library(rasterdiv)
 library(raster)
 
-data(copNDVI)
-plot(copNDVI)
-copNDVI <- reclassify(copNDVI, cbind(253:255, NA)) #toglie lo sfondo blu
-plot(copNDVI)
+data(copNDVI)  # means copernicus and NDVI realized image # we should remove the blue and brown part 
+plot(copNDVI)  # the map: longterm NDVI= average value for each pixel 1999-2017 
 
+copNDVI <- reclassify(copNDVI, cbind(253:255, NA)) # image can be coded --> different manner from 0 to 100 
+plot(copNDVI)                                      # or 8 bit image= 256 values (253-255= blue)
+                                                   # overwrite the previous file 
+# the blue is not useful for us, the scale il from 0 to 252. 252=green= higher biomass
 levelplot(copNDVI) 
 
-clymin <- colorRampPalette(c('yellow','red','blue'))(100) #
-
+clymin <- colorRampPalette(c('yellow','red','blue'))(100) # color yellow minimum 
 plot(copNDVI, col=clymin)
 
-
-
-clymed <- colorRampPalette(c('red','yellow','blue'))(100) # 
-
+clymed <- colorRampPalette(c('red','yellow','blue'))(100) # color yellow medium 
 plot(copNDVI, col=clymed)
 
-clymax <- colorRampPalette(c('blue','red','yellow'))(100) #
+clymax <- colorRampPalette(c('blue','red','yellow'))(100) # color yellow maximum #the best map
 plot(copNDVI, col=clymax)
 
+#differences in the yellow high impact on our eyes. 
 
-par(mfrow=c(1,2))
+par(mfrow=c(1,2))  #do a multiframe (two different graphs one side the other #two columns 1 row
 clymed <- colorRampPalette(c('red','yellow','blue'))(100) #
 plot(copNDVI, col=clymed)
 clymax <- colorRampPalette(c('blue','red','yellow'))(100) #
 plot(copNDVI, col=clymax)
 
+dev.off() #is used to remove the previous graph
 
-ext <- c(0,20,35,55)  # xmin xmax ymin ymax
-copNDVI_Italy <- crop(copNDVI, ext)
+#let's zoom in a certain part of the map
+#italy_ext <- extention(c(0,20,35,55)) #does not work   # xmin xmax ymin ymax #long and latitude
+ext <- c(0,20,35,55) #this works #extantion in which we are goig to zoom  
 
-copNDVI_Italy <- crop(copNDVI, ext)
+copNDVI_Italy <- crop(copNDVI, ext)  #crop the image based on the extent we decided 
 plot(copNDVI_italy, col=clymax)
-plot(copNDVI_Italy, col=clymax)
 
 
 #deforastation example 
@@ -112,6 +112,7 @@ plot(dvi1, col=cl, main="biomass before cut")
 plot(dvi2, col=cl, main="biomass after cut")
 plot(difdvi, col=cldif, main="amount of energy lost!")
 hist(difdvi, col="red")
+
 ##ggplot is prof prefered##
 
 
