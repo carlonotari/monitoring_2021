@@ -36,7 +36,7 @@ ext <- c(0,20,40,55)        #extantion in which we are goig to zoom     #long an
 clal <- colorRampPalette(c('goldenrod1','firebrick1','darkslateblue'))(100)
 gen_al00 <- crop(gen_al00, ext)
 
-gen_al20 <- raster("j2020.nc") #importing images
+gen_al20 <- raster("gen2020_1.nc") #importing images
 ext <- c(0,20,40,55)         #xmin xmax ymin ymax #long and latitude
 clal <- colorRampPalette(c('goldenrod1','firebrick1','darkslateblue'))(100)
 gen_al20 <- crop(gen_al20, ext)
