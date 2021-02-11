@@ -14,8 +14,8 @@ setwd("C:/exam_m/")  #setting the working directory
 
 #visone del mondo ' 2000 vs 2020
 
-al00 <- raster("j2000.nc")     #importing images   # https://land.copernicus.vgt.vito.be/PDF/free?productID=30608047&collectionID=1000174&fileIndex=0
-al20 <- raster("j2020.nc")     #importing images   # https://land.copernicus.vgt.vito.be/PDF/free?productID=56032676&collectionID=1000174&fileIndex=0
+#al00 <- raster("j2000.nc")     #importing images   # https://land.copernicus.vgt.vito.be/PDF/free?productID=30608047&collectionID=1000174&fileIndex=0
+#al20 <- raster("j2020.nc")     #importing images   # https://land.copernicus.vgt.vito.be/PDF/free?productID=56032676&collectionID=1000174&fileIndex=0
 
 clal <- colorRampPalette(c('goldenrod1','firebrick1','darkslateblue'))(100)   #it changes the color of the map 
 
