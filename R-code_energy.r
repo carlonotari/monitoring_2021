@@ -51,23 +51,31 @@ setwd("C:/lab/")   #set the working directory --> lab folder
 defor1 <- brick("defor1_.jpg")   #import several layers image  #Create A RasterBrick Object--> is a multi-layer raster objec
                                    #8 bit means= 256 colors for each bands
        
-plotRGB(defor1, 1, 2, 3, stretch="Lin")            #strech--> enanche the colors
-plotRGB(defor1, r=1, g=2, b=3, stretch="Lin")
+plotRGB(defor1, 1, 2, 3, stretch="Lin")            #strech--> enanches the colors
+plotRGB(defor1, r=1, g=2, b=3, stretch="Lin")      #the number rapresents the colour 
+                                               # if you put as an the NIR-ed in the Red channel
+                                     #--> all of the objects which are reflecting a lot in the band will be red.
 
-defor2 <- brick("defor2_.jpg")
+#import the defor2 image 
+
+defor2 <- brick("defor2_.jpg")    
 plotRGB(defor2, 1, 2, 3, stretch="Lin")
 plotRGB(defor2, r=1, g=2, b=3, stretch="Lin")
 
-##put the images one besides the other 
-
-par(mfrow=c(2,1))
+#put the images one beside the other 
+par(mfrow=c(2,1))  #1 columns and 2 row 
 plotRGB(defor1, r=1, g=2, b=3, stretch="Lin")
 plotRGB(defor2, r=1, g=2, b=3, stretch="Lin")
 
+# about the two different color of the water 
+#the water in the near infrared is absorbing a lot, while vegetation is reflecting a lot.
+#It depends from the season etc. So depending on the amount of sediment that water
+#is going to move, there will be a different color. 
 
 #DVI for the first period 
-dev.off()
-dvi1 <- defor1$defor1_.1 - defor1$defor1_.2
+dev.off() #dev.off() is a function used to clean the graph pannel 
+# defor1: the names of the layers (.1 is NIR, .2 is red, .3 is green) 
+dvi1 <- defor1$defor1_.1 - defor1$defor1_.2 # the dollar links the image defor1 to the layer, minus function subtracts the each pixel 
 
 cl <- colorRampPalette(c('darkblue','yellow','red','black'))(100) # specifying a color scheme
 plot(dvi1, col=cl)
@@ -94,9 +102,9 @@ plot(difdvi)
 cldif <- colorRampPalette(c('blue','white','red'))(100) 
 plot(difdvi, col=cldif, main="amount of energy lost!")
 
-hist(difdvi, col="red") #istogramma
+hist(difdvi, col="red") #put a istogramma of given data values
 
-#final par
+#final par!
 
 #defor1
 #defor2
@@ -105,13 +113,13 @@ hist(difdvi, col="red") #istogramma
 #difdvi
 #hist
 
-par(mfrow=c(3,2))
+par(mfrow=c(3,2))  #3rows and 2 columns 
 plotRGB(defor1, r=1, g=2, b=3, stretch="Lin")
 plotRGB(defor2, r=1, g=2, b=3, stretch="Lin")
 plot(dvi1, col=cl, main="biomass before cut")
 plot(dvi2, col=cl, main="biomass after cut")
 plot(difdvi, col=cldif, main="amount of energy lost!")
-hist(difdvi, col="red")
+hist(difdvi, col="red") 
 
 ##ggplot is prof prefered##
 
