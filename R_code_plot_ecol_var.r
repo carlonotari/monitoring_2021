@@ -3,7 +3,7 @@
 # R code for plotting the relationship among ecological variables 
 
 install.packages("sp")
-library(sp)
+library(sp)  #used to modify spatial data 
 
 #data is used to recall datasets
 data(meuse)
@@ -38,9 +38,9 @@ pairs(meuse)
 ###lecture 2###
 ##recall sp, and meuse##
 
-> library(sp)
-> data(meuse)
-> meuse
+library(sp)
+data(meuse)
+meuse
 pairs(meuse)
 
 head(meuse)
