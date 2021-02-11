@@ -1,20 +1,22 @@
 #R_code_sdm.r species distribution model
+# install.packages("sdm")
+# install.packages("rgdal", dependencies=T)
 
-library(sdm)
-library(raster)
-library(rgdal)
+library(sdm)    #library Species Distribution Modelling
+library(raster)  #prediction 
+library(rgdal)    #spacies 
 
 #import the species data
 file <- system.file("external/species.shp", package="sdm") 
 species <- shapefile(file)  #readOGR 
 
-plot(species, pch=17)
+plot(species, pch=17)  
 
-species$Occurrence
+species$Occurrence      # looking at the occurrences
 path <- system.file("external", package="sdm") 
 
 
-plot(species[species$Occurrence == 1,], col='blue', pch=17)
+plot(species[species$Occurrence == 1,], col='blue', pch=17)      #pch  changes dots 
 points(species[species$Occurrence == 0,], col='red', pch=17)
 
 path <- system.file("external", package="sdm") 
